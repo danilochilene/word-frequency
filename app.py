@@ -14,11 +14,13 @@ from worker import conn
 import json
 
 
+
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 q = Queue(connection=conn)
 from models import *
+
 
 def count_and_save_words(url):
 
@@ -61,9 +63,11 @@ def count_and_save_words(url):
         errors.append("Unable to add item to database.")
         return {"error": errors}
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+
 
 @app.route('/start', methods=['POST'])
 def get_counts():
@@ -79,6 +83,7 @@ def get_counts():
         func="app.count_and_save_words", args=(url,), result_ttl=5000
     )
     return job.get_id()
+
 
 @app.route("/results/<job_key>", methods=['GET'])
 def get_results(job_key):
