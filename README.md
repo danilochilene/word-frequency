@@ -34,7 +34,6 @@ Make sure redis-server is running
 export APP_SETTINGS="config.DevelopmentConfig"
 export DATABASE_URL="postgresql://localhost/wordcount_dev"
 python worker.py
-
 On other tab run:
 python app.py
 </pre></code>

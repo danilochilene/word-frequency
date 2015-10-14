@@ -14,7 +14,6 @@ from worker import conn
 import json
 
 
-
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
