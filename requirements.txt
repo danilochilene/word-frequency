@@ -14,7 +14,7 @@ itsdangerous==0.24
 Jinja2==2.8
 Mako==1.0.2
 MarkupSafe==0.23
-nltk==3.0.5
+nltk==3.6.6
 path.py==8.1.2
 pexpect==4.0.1
 pickleshare==0.5
